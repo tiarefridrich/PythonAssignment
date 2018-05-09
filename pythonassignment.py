@@ -1,5 +1,7 @@
 #!/usr/bin/#!/usr/bin/env python3
 
+#this code is just for working with the string, not all of the file
+
 #import the packages
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -10,7 +12,7 @@ class Seq(object): #this is general so it can accept more than one sequence
         self.sequence = sequence
 
 #Part 2: add a method to count kmers of size k
-    #this function counts the observed kmers
+    #this function counts the observed kmers, but does not make it come out in the form that can be used for the dataframe
     def count_kmers(self,k):
         counter = {} #empty counter
         for i,base in enumerate(self.sequence): #go through the string and get position and base
@@ -22,7 +24,7 @@ class Seq(object): #this is general so it can accept more than one sequence
         return(counter) #this returns the number and type of kmers
 
 mysequence = Seq("ATTTGGATT")
-print(mysequence.count_kmers(k))
+print(mysequence.count_kmers(1))
 print('Number of kmers: ',len(mysequence.count_kmers(1))) #have to include a number in here for it to work
 #how do I make it so it outputs the kmers without k specified as a number?
 
