@@ -29,6 +29,7 @@ class Seq(object): #this is general so it can accept more than one sequence
     #k = 1
     #for k in range(1,len([1])+100) shows more values but they are all equal to 4
     for k in range(1,len([1])+1):
+        #can I return the value from the first local variable and pass it to this function? how would I use it?
         observed_kmers = 4**1
         possible_kmers = 4**1
         #print('Number of possible kmers: ', possible_kmers)
@@ -43,7 +44,21 @@ class Seq(object): #this is general so it can accept more than one sequence
     print(counter_df)#prints dataframe
     counter_df.plot(kind='bar') #creates the bar chart for the  kmers present but in this case its only for the values of k=1
     #this does create a bar chart of the kmers
+    #or could use matplotlib.pyplot
 
+    #%matplotlib inline
+    #names = list(counter_df.keys())
+    #values = list(counter_df.values)
+    #plt.bar(range(len(counter_df)), values, tick_label=names);
+
+#Part 5: Add a method to calculate linguistic complexity
+    #linguistic complexity is the total value of observed_kmers divided by the total value of possible_kmers
+    #the method will not be accurate because the values for possible and observed kmers is incorrect
+    def linguistic_complexity(self,k):
+        self.observed_kmers = obs
+        self.possible_kmers = poss
+        value = [obs/poss]
+        return(value)
 
 mysequence = Seq("ATTTGGATT")
 #print(mysequence.count_kmers(1))
