@@ -32,17 +32,27 @@ class Seq(object): #this is general so it can accept more than one sequence
         observed_kmers = 4**1
         possible_kmers = 4**1
         #print('Number of possible kmers: ', possible_kmers)
+        #print('Number of observed kmers ', observed_kmers')
         print(k, ':', possible_kmers) #this doesn't print all of the kmers, only one value
+        #should it be a list of the types? not sure what to do
 
+    #make the pandas dataframe inside the sequence object
+#Part 4: Add a method inside the sequence object to produce a graph from the dataframe of the proportion of each kmer observed
+    counter_df = pandas.DataFrame(mysequence.count_kmers(k), index=['kmer']) #creates a dataframe
+    #the dataframe isn't exactly correct because it doesnt contain all three rows but it does contain the kmers
+    print(counter_df)#prints dataframe
+    counter_df.plot(kind='bar') #creates the bar chart for the  kmers present but in this case its only for the values of k=1
+    #this does create a bar chart of the kmers
 
 
 mysequence = Seq("ATTTGGATT")
-print(mysequence.count_kmers(1))
-print('Number of kmers: ',len(mysequence.count_kmers(1))) #have to include a number in here for it to work
+#print(mysequence.count_kmers(1))
+#print('Number of kmers: ',len(mysequence.count_kmers(1))) #have to include a number in here for it to work
+#print('Number of possible types: ', 4**k)
 #how do I make it so it outputs the kmers without k specified as a number?
 
-counter_df = pandas.DataFrame(mysequence.count_kmers(1), index=['kmer']) #creates a dataframe
-print(counter_df)#prints dataframe
-counter_df.plot(kind='bar'); #makes dataframe into a bar chart
+#counter_df = pandas.DataFrame(mysequence.count_kmers(1), index=['kmer']) #creates a dataframe
+#print(counter_df)#prints dataframe
+#counter_df.plot(kind='bar'); #makes dataframe into a bar chart
 
 #as of right now, still don't have the dataframe set up correctly, or the possible kmers
