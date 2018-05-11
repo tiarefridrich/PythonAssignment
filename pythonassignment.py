@@ -28,8 +28,8 @@ class Seq(object): #this is general so it can accept more than one sequence
     k = 1
     for k in range(1:len([1])+1):
         possible_kmers = 4**1
-        print(possible_kmers)
-
+        print('Number of possible kmers: ', possible_kmers)
+        print(k, ':', possible_kmers)
 
 
 
