@@ -25,11 +25,14 @@ class Seq(object): #this is general so it can accept more than one sequence
         return(counter) #this returns the number and type of kmers
 
 #Part 3: A method inside the Seq object to loop through the values of k and make a data frame out of the results.
-    k = 1
-    for k in range(1:len([1])+1):
+
+    #k = 1
+    #for k in range(1,len([1])+100) shows more values but they are all equal to 4
+    for k in range(1,len([1])+1):
+        observed_kmers = 4**1
         possible_kmers = 4**1
-        print('Number of possible kmers: ', possible_kmers)
-        print(k, ':', possible_kmers)
+        #print('Number of possible kmers: ', possible_kmers)
+        print(k, ':', possible_kmers) #this doesn't print all of the kmers, only one value
 
 
 
